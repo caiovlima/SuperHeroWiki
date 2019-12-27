@@ -1,68 +1,69 @@
 <mat-card class="card mat-elevation-z10">
   <mat-card-header>
     <mat-form-field>
-      <input matInput type="text" placeholder="Search a super hero name..." />
+      <input matInput type="text" placeholder="Search a super hero name..." (ngModel)="name" />
       <button
         type="submit"
         mat-button
         matSuffix
         mat-icon-button
         aria-label="Clear"
+        (click)="searchHeroByName(name)"
       >
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>
   </mat-card-header>
   <mat-card-header>
-    <mat-card-title>Wolverine</mat-card-title>
+    <mat-card-title>{{hero.Name}}</mat-card-title>
   </mat-card-header>
   <img
     mat-card-image
-    src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/03/legiao_TUr7O4WHVkLbzRhs5mdKxjg1yPA2JuaGM_voIeiCw9.jpg.jpeg"
-    alt="Photo of a Shiba Inu"
+    src={{hero.Image}}
+    alt="Photo of a Hero"
   />
   <mat-card-content>
     <div>
       <h3>Gender: </h3>
-      <p>Male</p>
+      <p>{{hero.Appearance.Gender}}</p>
     </div>
 
     <div>
       <h3>Race: </h3>
-      <p>Human</p>
+      <p>{{hero.Appearance.Race}}</p>
     </div>
     <div>
       <h3>Height: </h3>
-      <p>1,50 m</p>
+      <p>{{hero.Appearance.Height}}</p>
     </div>
     <div>
       <h3>Weight: </h3>
-      <p>90 kg</p>
+      <p>{{hero.Appearance.Weight}}</p>
     </div>
 
     <div>
       <h3>Intelligence: </h3>
-      <p>75</p>
+      <p>{{hero.PowerStats.Intelligence}}</p>
     </div>
     <div>
       <h3>Strength: </h3>
-      <p>83</p>
+      <p>{{hero.PowerStats.Strength}}</p>
     </div>
     <div>
       <h3>Speed: </h3>
-      <p>70</p>
+      <p>{{hero.PowerStats.Speed}}</p>
     </div>
     <div>
       <h3>Durability: </h3>
-      <p>84</p>
+      <p>{{hero.PowerStats.Durability}}</p>
     </div>
     <div>
       <h3>Power: </h3>
-      <p>100</p>
+      <p>{{hero.PowerStats.Power}}</p>
     </div>
     <div>
       <h3>Combat: </h3>
-      <p>70</p>
+      <p>{{hero.PowerStats.Combat}}</p>
     </div>
   </mat-card-content>
 </mat-card>
