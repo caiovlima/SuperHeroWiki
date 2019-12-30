@@ -9,7 +9,7 @@ import { ApiService } from '../shared/services/api.service';
 })
 export class HeroCardComponent implements OnInit {
 
-  name: string = '';
+  name: string;
   hero: Hero;
 
   loading = true;
@@ -28,8 +28,9 @@ export class HeroCardComponent implements OnInit {
   }
 
   apiRequest(name: string) {
-    this.apiService.getHero(name).subscribe( body => {
+    this.apiService.getHero(name).subscribe(body => {
       this.hero = body;
+      console.log('BODY: ', body);
       console.log('HERO: ', this.hero);
       this.loading = false;
     });

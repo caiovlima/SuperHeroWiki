@@ -18,9 +18,7 @@ export class ApiService {
 
   getHero(name: string): Observable<Hero> {
     const url = `${this.BASE_URL}${name}`;
-    return this.http.get<Hero>(url).pipe(
-      tap( _ => console.log(`leu o NAME: ${name}`))
-    );
+    return this.http.get<Hero>(url);
   }
 
 }
